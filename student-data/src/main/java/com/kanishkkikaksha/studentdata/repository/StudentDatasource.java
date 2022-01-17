@@ -8,4 +8,7 @@ public interface StudentDatasource {
 
     List<Student> retrieveStudents();
     Student retrieveStudent(int rollNumber);
+    String removeStudent(int rollNumber);
+    String createStudent(Student student);
+    String updateStudent(Student student);
 }

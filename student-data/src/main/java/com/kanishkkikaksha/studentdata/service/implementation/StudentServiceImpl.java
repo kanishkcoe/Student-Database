@@ -25,4 +25,19 @@ public class StudentServiceImpl implements StudentService {
     public Student getStudent(int rollNumber) {
         return this.datasource.retrieveStudent(rollNumber);
     }
+
+    @Override
+    public String addStudent(Student student) {
+        return this.datasource.createStudent(student);
+    }
+
+    @Override
+    public String updateStudent(Student student) {
+        return this.datasource.updateStudent(student);
+    }
+
+    @Override
+    public String removeStudent(int rollNumber) {
+        return this.datasource.removeStudent(rollNumber);
+    }
 }

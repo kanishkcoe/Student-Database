@@ -8,4 +8,7 @@ public interface StudentService {
 
     List<Student> getStudents();
     Student getStudent(int rollNumber);
+    String addStudent(Student student);
+    String updateStudent(Student student);
+    String removeStudent(int rollNumber);
 }

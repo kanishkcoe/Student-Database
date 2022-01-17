@@ -31,6 +31,49 @@ public class ListDatasource implements StudentDatasource {
                 return student;
             }
         }
+
         return null;
+    }
+
+    @Override
+    public String removeStudent(int rollNumber) {
+        boolean found = false;
+        for (int i = 0; i < studentList.size(); i++) {
+            if(studentList.get(i).getRollNumber() == rollNumber) {
+                Student student = studentList.get(i);
+                studentList.remove(i);
+                return "Student with data " + student + " is removed";
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    public String createStudent(Student student) {
+        if(student != null) {
+            studentList.add(student);
+            return "Student with data " + student + "added to the list";
+        }
+
+        return null;
+    }
+
+    @Override
+    public String updateStudent(Student student) {
+        boolean found = false;
+        for (int i = 0; i < studentList.size(); i++) {
+            if(studentList.get(i).getRollNumber() == student.getRollNumber()) {
+                studentList.remove(i);
+                studentList.add(student);
+                found = true;
+                break;
+            }
+        }
+        if(found) {
+            return "Student updated with new data as : " + student;
+        } else {
+            return null;
+        }
     }
 }
