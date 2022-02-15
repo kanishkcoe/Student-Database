@@ -1,11 +1,27 @@
 package com.kanishkkikaksha.studentdata.model;
 
+
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "STUDENT")
 public class Student implements Serializable {
 
+    @Id
+
     private int rollNumber;
+
     private String name;
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public Student() {
+        this.name = "default";
+        this.rollNumber = 0;
+    }
 
     public int getRollNumber() {
         return rollNumber;
